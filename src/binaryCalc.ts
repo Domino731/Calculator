@@ -28,8 +28,8 @@ export class BinaryCalc extends Calc {
 
     // changing number
     changeNumber(root) {
-        const value = root.firstElementChild;
-        value.innerText = +value.innerText === 0 ? 1 : 0;
+        const value : HTMLElement | null = root.firstElementChild;
+        value.innerText = value.innerText === "0" ? "1" : "0";
 
         this.check();
         this.update();
