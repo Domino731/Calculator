@@ -22,7 +22,7 @@ export class Calc {
     }
 
     // abstract method - changing number
-    changeNumber(root: HTMLElement) {
+    changeNumber(root: HTMLElement | null) {
         console.error(
             "This method (changeNumber) should be implemented in  inheriting class"
         );
@@ -47,33 +47,33 @@ export class Calc {
         );
         this.resultNumberArray.reverse().forEach((number: number, i: number) => {
             const resultValue: string = number.toString()
-            results[i].innerText = resultValue;
+            return results[i].innerText = resultValue;
         });
     }
 
     check() {
         // DOM
-        let calc = this.$calcDOMElement;
-        let $firstNumber = calc.querySelectorAll<HTMLElement>(".numbers__group label:first-child");
-        let $secondNumber = calc.querySelectorAll<HTMLElement>(
-            ".numbers__group label:nth-child(2)"
+        let calc : HTMLElement = this.$calcDOMElement;
+        let firstNumber = calc.querySelectorAll<HTMLElement>(".numbers__group .numbers__label:first-child");
+        let secondNumber = calc.querySelectorAll<HTMLElement>(
+            ".numbers__group .numbers__label:nth-child(2)"
         );
-        let $resultNumber = calc.querySelectorAll<HTMLElement>(".numbers__group .result-bit");
+
+        let resultNumber = calc.querySelectorAll<HTMLElement>(".numbers__group .numbers__result span");
 
 
-        for (let i = $firstNumber.length - 1, j = 0; i >= 0; i--, j++) {
+        for (let i = firstNumber.length - 1, j = 0; i >= 0; i--, j++) {
 
-            const first: number = parseInt($firstNumber[j].firstElementChild.textContent)
+            const first: number = parseInt(firstNumber[j].firstElementChild.textContent)
             this.firstNumberArray[i] = first
 
-            const second: number = parseInt($secondNumber[j].firstElementChild.textContent)
+            const second: number = parseInt(secondNumber[j].firstElementChild.textContent)
             this.secondNumberArray[i] = second
 
-            const result: number = parseInt($resultNumber[j].firstElementChild.textContent)
+            const result: number = parseInt(resultNumber[j].textContent)
             this.resultNumberArray[i] = result
         }
 
-        console.log(this.firstNumberArray, this.secondNumberArray);
         this.resultNumberArray = this.addNumber(
             this.firstNumberArray,
             this.secondNumberArray
@@ -82,6 +82,7 @@ export class Calc {
 
     // initialization - setting events on clicks
     initEvents() {
+
         const calc = this.$calcDOMElement
         calc.addEventListener("click", e => {
             const target =  e.target as Element;
