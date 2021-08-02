@@ -1,0 +1,113 @@
+@import "./_reset";
+
+$color_blue: #3a86ff;
+$color_red: #ff006e;
+$color_yellow: #ffbe0b;
+$color_orange: #fb5607;
+:root {
+  font-size: 10px;
+}
+
+body {
+  background: #363537;
+  font-family: 'Open Sans', sans-serif;
+  color: #f6e6e6;
+}
+
+.container {
+  width: 1440px;
+  margin: 20px auto;
+}
+
+.decimal, .binary {
+  display: flex;
+  height: 407px;
+}
+.decimal{
+  margin-bottom: 40px;
+}
+
+.calc{
+
+  &__container {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+
+  &__title {
+    border-bottom: 3px solid $color_blue;
+
+    h1 {
+      font-size: 4.3rem;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
+  &__operator {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      display: block;
+      font-size: 6.7rem;
+      color: $color_red;
+    }
+  }
+}
+
+.numbers {
+
+  &__container {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    &:first-child{
+      label:first-child, label:nth-child(2){
+        display: none;
+      }
+      .numbers__result:last-child{
+        border: none;
+      }
+    }
+
+  }
+
+  &__label{
+
+  }
+
+  &__value{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    width: 103px;
+    height: 103px;
+    background: $color_red;
+    font-size: 4.4rem;
+  }
+
+  &__result{
+    border-top: 3px solid $color_red;
+    span{
+      background: $color_blue;
+    }
+  }
+}
