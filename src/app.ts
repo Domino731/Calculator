@@ -3,9 +3,9 @@ import {BinaryCalc} from "./binaryCalc";
 import {DecimalCalc} from "./decimalCalc";
 
 document.addEventListener("DOMContentLoaded", () => {
-    const bitCalc : BinaryCalc = new BinaryCalc(".binary");
+    const bitCalc: BinaryCalc = new BinaryCalc(".binary");
     bitCalc.init()
 
-    const decCalc : DecimalCalc = new DecimalCalc(".decimal")
+    const decCalc: DecimalCalc = new DecimalCalc(".decimal")
     decCalc.init()
 });

@@ -4,7 +4,8 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Typescript Webpack Starter</title>
+    <meta name="description" content="Decimal and 8-bit binary calculator ">
+    <title>Bindec Calc</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
@@ -12,13 +13,17 @@
 </head>
 <body>
 <main class="container">
-<div class="landscape">
-    <div class="rotate">
-        <i class="fas fa-mobile"></i>
-        <i class="fas fa-sync-alt"></i>
+
+
+    <div class="landscape">
+        <div class="rotate">
+            <i class="fas fa-mobile"></i>
+            <i class="fas fa-sync-alt"></i>
+        </div>
+        <span>Rotate your device for better experience.</span>
     </div>
-    <span>Rotate your phone for better experience.</span>
-</div>
+
+    <!--    decimal-->
     <section class="calc__container">
         <div class="calc__title">
             <h1>Decimal calc</h1>
@@ -29,6 +34,8 @@
                 <div class="tooltip">Click to add values</div>
                 <span id="decimalOperator">+</span>
             </div>
+
+            <!--            container with value boxes-->
             <div class="numbers__container">
 
                 <div class="numbers__group">
@@ -161,7 +168,7 @@
         </form>
     </section>
 
-
+    <!--binary calc-->
     <section class="calc__container">
         <div class="calc__title">
             <h1>8-Bit Binary calc </h1>
@@ -169,8 +176,9 @@
         </div>
         <form class="binary">
             <div class="calc__operator">
-
             </div>
+
+            <!--            container with value boxes-->
             <div class="numbers__container">
 
                 <div class="numbers__group">

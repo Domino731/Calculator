@@ -22,7 +22,7 @@ $color_orange: #fb5607;
 body {
   background: #363537;
   font-family: 'Open Sans', sans-serif;
-  color: #f6e6e6;
+  color: #e7e7e7;
 }
 
 .container {
@@ -96,7 +96,7 @@ body {
       font-size: 4.3rem;
       margin-bottom: 5px;
 
-      @media (max-width: 768px){
+      @media (max-width: 768px) {
         margin-bottom: 2px;
       }
     }
@@ -123,6 +123,7 @@ body {
     @media (max-width: 375px) {
       width: 14%;
     }
+
     span {
       display: block;
       font-size: 6.7rem;
@@ -199,7 +200,7 @@ body {
       font-size: 3.333rem;
     }
 
-    @media (max-width: 425px){
+    @media (max-width: 425px) {
       width: 31px;
       height: 31px;
     }
@@ -220,6 +221,7 @@ body {
       border-top: 2px solid $color_red;
       padding-top: 4px;
     }
+
     span {
       background: $color_blue;
     }
@@ -260,46 +262,50 @@ body {
 .active {
   display: flex;
 }
-.landscape{
+
+.landscape {
   display: none;
 
-  span{
+  span {
     display: block;
     text-align: center;
     font-size: 2rem;
     margin-bottom: 20px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 425px) {
     display: block;
   }
-  @media (orientation: landscape){
+  @media (orientation: landscape) {
     display: none;
   }
-  @media (max-width: 425px){
-    span{
+  @media (max-width: 425px) {
+    span {
       margin-top: -8px;
     }
   }
 
 }
-.rotate{
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    width: 135px;
-    position: relative;
-    i{
-      display: block;
-      font-size: 126px;
-      transform: rotate(90deg);
-    }
-    i:first-child{
-      background: #363537;
 
-    }
+.rotate {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 135px;
+  position: relative;
 
-  i:last-child{
+  i {
+    display: block;
+    font-size: 126px;
+    transform: rotate(90deg);
+  }
+
+  i:first-child {
+    background: #363537;
+
+  }
+
+  i:last-child {
     position: absolute;
     bottom: 38px;
     z-index: 2;
@@ -307,11 +313,11 @@ body {
     font-size: 52px;
   }
 
-  @media (max-width: 425px){
-    i{
+  @media (max-width: 425px) {
+    i {
       font-size: 100px;
     }
-    i:last-child{
+    i:last-child {
       font-size: 42px;
       bottom: 29px;
     }
