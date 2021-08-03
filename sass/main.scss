@@ -6,6 +6,10 @@ $color_yellow: #ffbe0b;
 $color_orange: #fb5607;
 :root {
   font-size: 10px;
+
+  @media (max-width: 1024px){
+   font-size: 8px;
+  }
 }
 
 body {
@@ -15,19 +19,36 @@ body {
 }
 
 .container {
-  width: 1440px;
+  width: 1400px;
   margin: 20px auto;
+
+  @media (max-width: 1440px){
+    width: 1000px;
+  }
+
+  @media (max-width: 1024px){
+   width: 750px;
+  }
 }
 
 .decimal, .binary {
   display: flex;
   height: 407px;
+
+  @media (max-width: 1440px){
+    height: 300px;
+  }
+
+  @media (max-width: 1024px){
+    height: 249px;
+  }
 }
-.decimal{
+
+.decimal {
   margin-bottom: 40px;
 }
 
-.calc{
+.calc {
 
   &__container {
     width: 100%;
@@ -52,7 +73,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
+    @media (max-width: 1024px){
+      width: 16%;
+    }
     span {
       display: block;
       font-size: 6.7rem;
@@ -68,30 +93,35 @@ body {
     height: 100%;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 1024px){
+      width: 84%;
+    }
   }
 
-  &__group{
+  &__group {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
 
-    &:first-child{
-      label:first-child, label:nth-child(2){
+    &:first-child {
+      label:first-child, label:nth-child(2) {
         display: none;
       }
-      .numbers__result:last-child{
+
+      .numbers__result:last-child {
         border: none;
       }
     }
 
   }
 
-  &__label{
+  &__label {
 
   }
 
-  &__value{
+  &__value {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,12 +132,45 @@ body {
     height: 103px;
     background: $color_red;
     font-size: 4.4rem;
+
+    @media (max-width: 1440px){
+      width: 80px;
+      height: 80px;
+      margin-bottom: 8px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 1024px){
+      width: 62px;
+      height: 62px;
+      margin: 6px 2px 5px 2px
+    }
   }
 
-  &__result{
+  &__result {
     border-top: 3px solid $color_red;
-    span{
+
+    span {
       background: $color_blue;
     }
   }
+}
+
+.tooltip {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 70px;
+  border-radius: 14px;
+  font-size: 2rem;
+  border: 3px solid $color_red;
+  text-align: center;
+
+  @media (max-width: 1024px) {
+    width: 120px;
+  }
+}
+.active{
+  display: flex;
 }

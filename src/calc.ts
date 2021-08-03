@@ -81,7 +81,7 @@ export class Calc {
     }
 
     // initialization - setting events on clicks
-    initEvents() {
+    init() {
 
         const calc = this.$calcDOMElement
         calc.addEventListener("click", e => {
@@ -91,5 +91,13 @@ export class Calc {
                 this.changeNumber(parentLabel);
             }
         });
+    }
+
+    getFirstNumberArray() : number[] {
+        return this.firstNumberArray
+    }
+
+    getSecondNumberArray() : number[] {
+        return this.secondNumberArray
     }
 }
