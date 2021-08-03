@@ -2,13 +2,20 @@
 
 $color_blue: #3a86ff;
 $color_red: #ff006e;
-$color_yellow: #ffbe0b;
 $color_orange: #fb5607;
 :root {
   font-size: 10px;
 
-  @media (max-width: 1024px){
-   font-size: 8px;
+  @media (max-width: 1024px) {
+    font-size: 8px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 6px;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 5px;
   }
 }
 
@@ -22,12 +29,24 @@ body {
   width: 1400px;
   margin: 20px auto;
 
-  @media (max-width: 1440px){
+  @media (max-width: 1440px) {
     width: 1000px;
   }
 
-  @media (max-width: 1024px){
-   width: 750px;
+  @media (max-width: 1024px) {
+    width: 750px;
+  }
+
+  @media (max-width: 768px) {
+    width: 400px;
+  }
+
+  @media (max-width: 425px) {
+    width: 370px;
+  }
+
+  @media (max-width: 375px) {
+    width: 310px;
   }
 }
 
@@ -35,17 +54,32 @@ body {
   display: flex;
   height: 407px;
 
-  @media (max-width: 1440px){
+  @media (max-width: 1440px) {
     height: 300px;
   }
 
-  @media (max-width: 1024px){
+  @media (max-width: 1024px) {
     height: 249px;
+  }
+
+  @media (max-width: 768px) {
+    height: 133px;
+  }
+  @media (max-width: 425px) {
+    height: 125px;
+  }
+
+  @media (max-width: 375px) {
+    height: 103px;
   }
 }
 
 .decimal {
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
 }
 
 .calc {
@@ -61,6 +95,10 @@ body {
     h1 {
       font-size: 4.3rem;
       margin-bottom: 5px;
+
+      @media (max-width: 768px){
+        margin-bottom: 2px;
+      }
     }
 
     h2 {
@@ -75,8 +113,15 @@ body {
     align-items: center;
     flex-direction: column;
 
-    @media (max-width: 1024px){
+    @media (max-width: 1024px) {
       width: 16%;
+    }
+    @media (max-width: 768px) {
+      width: 15%;
+    }
+
+    @media (max-width: 375px) {
+      width: 14%;
     }
     span {
       display: block;
@@ -94,7 +139,7 @@ body {
     display: flex;
     justify-content: space-between;
 
-    @media (max-width: 1024px){
+    @media (max-width: 1024px) {
       width: 84%;
     }
   }
@@ -133,23 +178,48 @@ body {
     background: $color_red;
     font-size: 4.4rem;
 
-    @media (max-width: 1440px){
+    @media (max-width: 1440px) {
       width: 80px;
       height: 80px;
       margin-bottom: 8px;
       margin-top: 8px;
     }
 
-    @media (max-width: 1024px){
+    @media (max-width: 1024px) {
       width: 62px;
       height: 62px;
       margin: 6px 2px 5px 2px
     }
+
+    @media (max-width: 768px) {
+
+      width: 34px;
+      height: 34px;
+      margin: 4px 2px 5px 2px;
+      font-size: 3.333rem;
+    }
+
+    @media (max-width: 425px){
+      width: 31px;
+      height: 31px;
+    }
+
+    @media (max-width: 375px) {
+      width: 26px;
+      height: 26px;
+      margin: 0 2px 4px 2px;
+    }
   }
 
+
   &__result {
+
     border-top: 3px solid $color_red;
 
+    @media (max-width: 375px) {
+      border-top: 2px solid $color_red;
+      padding-top: 4px;
+    }
     span {
       background: $color_blue;
     }
@@ -170,7 +240,80 @@ body {
   @media (max-width: 1024px) {
     width: 120px;
   }
+
+  @media (max-width: 768px) {
+    width: 88px;
+    margin-left: 33px;
+  }
+
+  @media (max-width: 425px) {
+    width: 79px;
+  }
+
+  @media (max-width: 375px) {
+    width: 62px;
+    height: 45px;
+    margin-left: 30px;
+  }
 }
-.active{
+
+.active {
   display: flex;
+}
+.landscape{
+  display: none;
+
+  span{
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+  @media (orientation: landscape){
+    display: none;
+  }
+  @media (max-width: 425px){
+    span{
+      margin-top: -8px;
+    }
+  }
+
+}
+.rotate{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 135px;
+    position: relative;
+    i{
+      display: block;
+      font-size: 126px;
+      transform: rotate(90deg);
+    }
+    i:first-child{
+      background: #363537;
+
+    }
+
+  i:last-child{
+    position: absolute;
+    bottom: 38px;
+    z-index: 2;
+    color: $color_orange;
+    font-size: 52px;
+  }
+
+  @media (max-width: 425px){
+    i{
+      font-size: 100px;
+    }
+    i:last-child{
+      font-size: 42px;
+      bottom: 29px;
+    }
+  }
 }
