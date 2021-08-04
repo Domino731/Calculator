@@ -1,5 +1,5 @@
 // abstract class, which will be extending by decimal and binary calc
-export class Calc {
+export abstract class Calc {
 
     private calcName: string;
     private calcDOMElement: HTMLElement | null;
