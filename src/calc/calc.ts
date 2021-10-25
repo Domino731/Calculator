@@ -8,7 +8,7 @@ export abstract class Calc {
     private BotRowNumberArray: number[];
 
 
-    constructor(calcSelector: "decimal" | "binary") {
+    constructor(calcSelector: ".decimal" | ".binary") {
         // calc name - decimal or binary
         this.calcName = calcSelector
         // base on that, the another elements will be downloaded in methods (numbers, results...)

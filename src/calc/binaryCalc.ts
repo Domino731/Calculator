@@ -4,7 +4,7 @@ import {Calc} from "./calc";
  * class for binary calculator
  */
 export class BinaryCalc extends Calc {
-    constructor(root) {
+    constructor(root: '.binary') {
         super(root);
     }
 
@@ -34,10 +34,10 @@ export class BinaryCalc extends Calc {
     }
 
     // changing number
-    changeNumber(root) {
+    changeNumber(root: HTMLElement) {
 
         // specific value box
-        const value: HTMLElement | null = root.firstElementChild;
+        const value: HTMLElement | null = root.firstElementChild as HTMLElement;
         value.innerText = value.innerText === "0" ? "1" : "0";
 
         this.check();

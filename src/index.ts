@@ -1,6 +1,7 @@
-import "../sass/main.scss"
-import {BinaryCalc} from "./binaryCalc";
-import {DecimalCalc} from "./decimalCalc";
+import "./sass/main.scss"
+import { BinaryCalc } from "./calc/binaryCalc";
+import { DecimalCalc } from "./calc/decimalCalc";
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const bitCalc: BinaryCalc = new BinaryCalc(".binary");

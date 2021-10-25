@@ -5,7 +5,7 @@ export class DecimalCalc extends Calc {
     private tooltip: HTMLElement | null;
     private operator: HTMLElement | null;
 
-    constructor(selector) {
+    constructor(selector: ".decimal") {
         super(selector);
         this.tooltip = document.querySelector(".tooltip");
         this.operator = document.querySelector("#decimalOperator")
@@ -27,11 +27,11 @@ export class DecimalCalc extends Calc {
     }
 
 
-    changeNumber(parentElement) {
-        const valueBox = parentElement.firstElementChild;
+    changeNumber(parentElement: HTMLElement) {
+        const valueBox : HTMLElement = parentElement.firstElementChild as HTMLElement;
 
         // allow user to edit value
-        valueBox.contentEditable = true
+        valueBox.contentEditable = 'true';
         valueBox.focus();
 
         // when user enter new value, show tooltip to inform him what's next

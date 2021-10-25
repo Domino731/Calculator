@@ -1,55 +1,60 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path");
+const mode = process.env.NODE_ENV || "development";
+const target = process.env.NODE_ENV === "production" ? "browserslist" : "web";
 
 module.exports = {
-    entry: './src/app.ts',
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: "index.html",
-            minify: {
-                minifyCSS: true,
-                minifyJS: true
-            }
-        })
-    ],
-    module: {
-        rules: [
-            {
-                test: /\.tsx?$/,
-                use: "ts-loader",
-                exclude: /node_modules/,
-            },
-            {
-                test: /\.m?js$/,
-                exclude: /(node_modules)/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: ["@babel/preset-env"]
-                    }
-                }
-            },
-            {
-                test: /\.s[ac]ss$/i,
-                use: ["style-loader", "css-loader", "sass-loader"]
-            },
-            {
-                test: /\.(png|jpg|jpeg|gif)$/i,
-                type: "asset"
-            },
-            {
-                test: /\.(svg)$/i,
-                type: "asset/source"
-            }
+  mode: mode,
+  stats: {
+    children: false,
+  },
+  entry: {
+    auth: `./src/auth.ts`,
+    index: `./src/index.ts`
+  },
+  plugins: [new MiniCssExtractPlugin()],
+
+  module: {
+    rules: [
+      // typescript compilation into common js
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "ts-loader",
+        },
+      },
+      // file loader for images
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          }
         ]
-    },
-    resolve: {
-        extensions: [".tsx", ".ts", ".js"]
-    },
-    output: {
-        filename: "[name].bundle.js",
-        path: path.resolve(__dirname, "dist"),
-        assetModuleFilename: 'assets/[hash][ext][query]',
-        clean: true
-    }
-}
+      },
+      // sass compiler
+      {
+        test: /\.(s[ac]|c)ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader",
+        ],
+      },
+    ],
+  },
+  target: target,
+  resolve: {
+    extensions: [".ts", ".js"],
+  },
+  devtool: "source-map",
+  devServer: {
+    contentBase: path.join(__dirname),
+    publicPath: "./dist/",
+    compress: true,
+    port: 3001,
+    historyApiFallback: true,
+  },
+};
