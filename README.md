@@ -1,5 +1,5 @@
 # Decimal & binary calculator
-Decimal and binary calculator created in typescript by using object oriented programing.
+Decimal and binary calculator created in typescript by using object oriented programing. Available at https://app.netlify.com/sites/jovial-lichterman-b95143/overview
 ## Technology 
 * Webpack
 * Typescript
