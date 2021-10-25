@@ -21,7 +21,7 @@ $color_orange: #fb5607;
 
 body {
   background: #363537;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #e7e7e7;
 }
 
@@ -50,7 +50,8 @@ body {
   }
 }
 
-.decimal, .binary {
+.decimal,
+.binary {
   display: flex;
   height: 407px;
 
@@ -83,7 +84,6 @@ body {
 }
 
 .calc {
-
   &__container {
     width: 100%;
     padding-bottom: 10px;
@@ -133,7 +133,6 @@ body {
 }
 
 .numbers {
-
   &__container {
     width: 80%;
     height: 100%;
@@ -152,7 +151,8 @@ body {
     justify-content: flex-end;
 
     &:first-child {
-      label:first-child, label:nth-child(2) {
+      label:first-child,
+      label:nth-child(2) {
         display: none;
       }
 
@@ -160,11 +160,6 @@ body {
         border: none;
       }
     }
-
-  }
-
-  &__label {
-
   }
 
   &__value {
@@ -189,11 +184,10 @@ body {
     @media (max-width: 1024px) {
       width: 62px;
       height: 62px;
-      margin: 6px 2px 5px 2px
+      margin: 6px 2px 5px 2px;
     }
 
     @media (max-width: 768px) {
-
       width: 34px;
       height: 34px;
       margin: 4px 2px 5px 2px;
@@ -212,9 +206,7 @@ body {
     }
   }
 
-
   &__result {
-
     border-top: 3px solid $color_red;
 
     @media (max-width: 375px) {
@@ -284,7 +276,6 @@ body {
       margin-top: -8px;
     }
   }
-
 }
 
 .rotate {
@@ -302,7 +293,6 @@ body {
 
   i:first-child {
     background: #363537;
-
   }
 
   i:last-child {

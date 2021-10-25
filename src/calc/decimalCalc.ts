@@ -28,6 +28,7 @@ export class DecimalCalc extends Calc {
         this.tooltip.classList.remove("active");
     }
 
+
     changeNumber(parentElement: HTMLElement) {
 
         // set content editable to this box in order to allow user edit value
@@ -80,7 +81,7 @@ export class DecimalCalc extends Calc {
             });
     }
 
-    // initialization
+    // initialization, add click event on calc operator with callback function in order display result of entered numbers 
     init() {
         super.init();
 

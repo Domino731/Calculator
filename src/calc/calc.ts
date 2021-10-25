@@ -87,14 +87,14 @@ export abstract class Calc {
             this.resultNumberArray[i] = result;
         }
 
-        // array with results
+        // update array with results
         this.resultNumberArray = this.addNumber(
             this.TopRowNumberArray,
             this.BotRowNumberArray
         );
     }
 
-    // initialization of calculator - add click event on calculator container in order to change final result
+    // initialization of calculator - add click event on calculator container in order to change resultNumberArray
     init() {
 
         // event on boxes
