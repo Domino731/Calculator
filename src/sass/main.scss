@@ -178,7 +178,7 @@ body {
     height: 103px;
     background: $color_red;
     font-size: 4.4rem;
-
+    overflow: hidden;
     @media (max-width: 1440px) {
       width: 80px;
       height: 80px;

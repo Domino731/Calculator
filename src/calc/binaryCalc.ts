@@ -8,16 +8,20 @@ export class BinaryCalc extends Calc {
         super(root);
     }
 
-    // add numbers in two array
+    // this method is adding numbers from two rows in calculator with the same index, at the end this method is returning array final values 
     addNumber(numberArrFirst: number[], numberArrSecond: number[]): number[] {
 
         // array with results
         let resultArr: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-        // replacing values in resultArr
+        // replacing values in resultArr, adding numbers starts from the right
         for (let i = numberArrFirst.length - 1; i >= 0; i--) {
-            let carryBit: number = resultArr[i] + numberArrFirst[i] + numberArrSecond[i];
-            switch (carryBit) {
+
+            // add values from each row in calculator and and particular value from array with results - resultArr
+            let value: number = resultArr[i] + numberArrFirst[i] + numberArrSecond[i];
+
+            // changing array with results -> inserting specific number in resultArr
+            switch (value) {
                 case 2:
                     resultArr[i] = 0;
                     resultArr[i + 1] = 1;
@@ -27,20 +31,22 @@ export class BinaryCalc extends Calc {
                     resultArr[i - 1] = 1;
                     break
                 default:
-                    resultArr[i] = carryBit;
+                    resultArr[i] = value;
             }
         }
         return resultArr;
     }
 
-    // changing number
     changeNumber(root: HTMLElement) {
 
         // specific value box
-        const value: HTMLElement | null = root.firstElementChild as HTMLElement;
+        const value: HTMLElement = root.firstElementChild as HTMLElement;
         value.innerText = value.innerText === "0" ? "1" : "0";
 
+        // setarray with results -> this.resultNumberArray
         this.check();
+        
+        // update and display calculator result
         this.update();
     }
 }

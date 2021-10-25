@@ -9,7 +9,6 @@ module.exports = {
     children: false,
   },
   entry: {
-    auth: `./src/auth.ts`,
     index: `./src/index.ts`
   },
   plugins: [new MiniCssExtractPlugin()],
@@ -49,10 +48,10 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".js"],
   },
-  devtool: "source-map",
+ // devtool: "source-map",
   devServer: {
     contentBase: path.join(__dirname),
-    publicPath: "./dist/",
+    publicPath: "/dist/",
     compress: true,
     port: 3001,
     historyApiFallback: true,
