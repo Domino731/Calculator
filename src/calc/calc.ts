@@ -19,10 +19,11 @@ export abstract class Calc {
         this.resultNumberArray = [0, 0, 0, 0, 0, 0, 0, 0, 0];
         this.TopRowNumberArray = [];
         this.BotRowNumberArray = [];
+        this.init();
     }
 
     /**
-     * abstract method - changing number, it will run always when user click on value box
+     * abstract method - changing number, this method is running always when user click on value box
      * @param root - box with value (only red value boxes)
      */
     changeNumber(root: HTMLElement) {

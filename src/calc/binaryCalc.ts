@@ -20,7 +20,7 @@ export class BinaryCalc extends Calc {
             // add values from each row in calculator and and particular value from array with results - resultArr
             let value: number = resultArr[i] + numberArrFirst[i] + numberArrSecond[i];
 
-            // changing array with results -> inserting specific number in resultArr
+            // changing array with results -> inserting specific number in resultArr  
             switch (value) {
                 case 2:
                     resultArr[i] = 0;
@@ -34,6 +34,7 @@ export class BinaryCalc extends Calc {
                     resultArr[i] = value;
             }
         }
+             // in update() method this resultArr will be reversed.
         return resultArr;
     }
 
@@ -45,7 +46,7 @@ export class BinaryCalc extends Calc {
 
         // setarray with results -> this.resultNumberArray
         this.check();
-        
+
         // update and display calculator result
         this.update();
     }
