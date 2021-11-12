@@ -2,13 +2,13 @@
 export abstract class Calc {
 
     /** Calculator container */
-    private calcContainer: HTMLElement | null;
+    protected calcContainer: HTMLElement | null;
     /** array with zeros which is representing the final result of adding values in calc*/
-    private resultNumberArray: number[];
+    protected resultNumberArray: number[];
     /** array with values in top row in calculator */
-    private TopRowNumberArray: number[];
+    protected TopRowNumberArray: number[];
     /** array with values in bottom row in calculator */
-    private BotRowNumberArray: number[];
+    protected BotRowNumberArray: number[];
 
     /** 
      * @param calcSelector - string needed to search specific element in DOM with calculator 
