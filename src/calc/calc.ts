@@ -47,7 +47,7 @@ export abstract class Calc {
      *  method that is displaying result in calculator (blue boxes), go through the whole array and putting values into corresponding places in results (blue boxes)
      */
     update() {
-
+        console.log(12)
         // find blue boxes with are needed to inject result values 
         const results : NodeListOf<HTMLElement> = this.calcContainer.querySelectorAll( ".numbers__result span");
            

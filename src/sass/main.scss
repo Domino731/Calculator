@@ -128,6 +128,9 @@ body {
       display: block;
       font-size: 6.7rem;
       color: $color_red;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

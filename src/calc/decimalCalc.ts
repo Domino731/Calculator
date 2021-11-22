@@ -5,13 +5,14 @@ export class DecimalCalc extends Calc {
 
     /** Wrapper of tooltip */
     private tooltip: HTMLElement | null;
-    /** calculator operator, needed to apply at him click event with callback function which is reponsible for calculataing result */
+    /** calculator operator, needed to apply at him click event with callback function which is reponsible for calculataing operation */
     private operator: HTMLElement | null;
 
     constructor(selector: ".decimal") {
         super(selector);
         this.tooltip = document.querySelector(".tooltip");
         this.operator = document.querySelector("#decimalOperator");
+        this.init();
     }
 
     /**
@@ -19,6 +20,7 @@ export class DecimalCalc extends Calc {
      * @param text - text that you want to insert into tooltip
      */
     showTooltip(text: string) {
+        this.tooltip = document.querySelector(".tooltip")
         this.tooltip.innerText = text;
         this.tooltip.classList.add("active");
     }
@@ -84,12 +86,10 @@ export class DecimalCalc extends Calc {
     // initialization, add click event on calc operator with callback function in order display result of entered numbers 
     init() {
         super.init();
-
         // event for red value box
-        this.operator.addEventListener("click", e => {
-
+        document.querySelector("#decimalOperator").addEventListener("click", e => {
             // hide tooltip
-            this.hideTooltip();
+           this.hideTooltip();
 
             // value validation 
             const checkNumbers: boolean = this.check();
